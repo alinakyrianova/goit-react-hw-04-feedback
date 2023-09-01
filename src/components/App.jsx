@@ -13,7 +13,7 @@ export const App = () => {
         if (type === 'good') {
             setGood(prevGood => prevGood + 1);
         } else if (type === 'neutral') {
-            setNeutral(prevneutral => prevneutral + 1);
+            setNeutral(prevNeutral => prevNeutral + 1);
         } else if (type === 'bad') {
             setBad(prevBad => prevBad + 1);
         }
@@ -43,7 +43,7 @@ export const App = () => {
         return totalFeedback === 0 ? 0 : Math.round((good / totalFeedback) * 100);
     };
 
-    const options = ['good', 'neutrla', 'bad'];
+    const options = ['good', 'neutral', 'bad'];
     return (
         <>
             <Section title="Please leave feedback">
@@ -54,8 +54,8 @@ export const App = () => {
                     good={good}
                     neutral={neutral}
                     bad={bad}
-                    total={countTotalFeedback}
-                    positivePercentage={countPositiveFeedbackPercentage} />) :
+                    total={countTotalFeedback()}
+                    positivePercentage={countPositiveFeedbackPercentage()} />) :
                     (<Notification message="No feedback given" />)}
                     
             
