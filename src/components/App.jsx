@@ -17,5 +17,30 @@ export const App = () => {
         } else if (type === 'bad') {
             setBad(prevBad => prevBad + 1);
         }
-    }
+
+        switch (type) {
+            case 'good':
+                setGood(good + 1);
+                break;
+            case 'neutral':
+                setGood(neutral + 1);
+                break;
+            case 'bad':
+                setGood(bad + 1);
+                break;
+            
+            default:
+                break;
+        }
+    };
+
+    const countTotalFeedback = () => {
+        return good + neutral + bad;
+    };
+
+    const countPositiveFeedbackPercentage = () => {
+        const totalFeedback = countTotalFeedback();
+        return totalFeedback= === 0 ? 0 : Math.round((good / total) * 100);
 }
+
+    }

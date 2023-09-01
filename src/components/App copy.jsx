@@ -21,13 +21,13 @@ export class App extends Component  {
    // })
  // }
    
-  countTotalFeedback = () => {
-    return this.state.total;
-  }
-  countPositiveFeedbackPercentage = () => {
-    const { good, total } = this.state;
-    return total === 0 ? 0 : Math.round((good / total) * 100);
-  }
+ // countTotalFeedback = () => {
+   // return this.state.total;
+  //}
+  //countPositiveFeedbackPercentage = () => {
+    //const { good, total } = this.state;
+   // return total === 0 ? 0 : Math.round((good / total) * 100);
+  //}
  
   render() {
     const { good, neutral, bad } = this.state;
